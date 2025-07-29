@@ -29,72 +29,67 @@
 /*======================================
 //--//-->   ABOUT
 ======================================*/
+<style>
 :root {
-        --primary: #5e002ff5; /* Hot Pink */
-        --secondary: #dfd5f3; /* Medium Purple */
-      }
+  --primary: #fbeff2; /* Baby Pink */
+  --secondary: #f7f5f2; /* Eggshell White */
+  --accent: #ffd6e0; /* Soft Pink Accent */
+  --text: #4a4a4a; /* Darker grey for text contrast */
+  --highlight: #ffe5ec; /* Light highlight pink */
+}
 
-      body {
-        background-color: var(--primary);
-        color: var(--secondary);
-      }
+body {
+  background-color: var(--primary);
+  color: var(--text);
+}
 
-      h1, h2, h3, h4, h5, h6 {
-        color: var(--secondary);
-      }
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+}
 
-      .button, .btn {
-        background-color: var(--secondary);
-        color: #fff;
-        border: 2px solid var(--primary);
-      }
+.button, .btn {
+  background-color: var(--accent);
+  color: var(--text);
+  border: 2px solid var(--highlight);
+}
 
-      .button:hover, .btn:hover {
-        background-color: var(--primary);
-        border-color: var(--secondary);
-        color: #fff;
-      }
+.button:hover, .btn:hover {
+  background-color: var(--highlight);
+  color: var(--text);
+  border-color: var(--accent);
+}
+
 .about-mf .box-shadow-full {
   padding-top: 4rem;
   padding-bottom: 4rem;
+  background-color: var(--secondary);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-
-.about-mf .about-img {
-  margin-bottom: 2rem;
-}
-
-.about-mf .about-img img {
-  margin-left: 10px;
-}
-
 
 .skill-mf .progress {
-  /* background-color: #cde1f8; */
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .7rem;
+  margin: 0.5rem 0 1.2rem 0;
+  border-radius: 10px;
+  height: 0.7rem;
+  background-color: var(--highlight);
 }
 
 .skill-mf .progress .progress-bar {
-  height: .7rem;
-  background-color: #98ff98;
+  height: 0.7rem;
+  background-color: #f7aef8; /* Soft lavender pink */
 }
 
-
-/* Animation styles */
 #typing-animation {
-  position: relative;
   font-size: 30px;
   font-weight: bold;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
+  color: #cc5c84; /* Baby pink text */
   white-space: nowrap;
+  overflow: hidden;
   animation: typing 3s steps(20, end) infinite;
 }
 
 #typing-animation:before {
   content: "";
-  /* position: absolute; */
   top: 0;
   left: 0;
   width: 0;
@@ -104,25 +99,14 @@
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 @keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
+  from { width: 5px; }
+  to { width: 0; }
 }
-
-
-/* project image zoom effect */
 
 .zoom-effect {
   overflow: hidden;
@@ -132,8 +116,6 @@
 .zoom-effect:hover {
   transform: scale(1.1);
 }
-
-
 </style>
 
 
