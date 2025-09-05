@@ -1,755 +1,509 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Ankita Singh Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<head>
+  <meta charset="utf-8" />
+  <title>Ankita Singh Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
-    <link rel="stylesheet" href="css/animate.css" />
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="css/magnific-popup.css" />
-    <link rel="stylesheet" href="css/aos.css" />
-    <link rel="stylesheet" href="css/ionicons.min.css" />
-    <link rel="stylesheet" href="css/flaticon.css" />
-    <link rel="stylesheet" href="css/icomoon.css" />
-    <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root{
+      --bg:#FAFAFC;       /* soft light background */
+      --surface:#FFFFFF;  /* cards and nav background */
+      --muted:#F4F6F8;    /* section strips */
+      --primary:#90CAF9;  /* sky blue accent */
+      --secondary:#F48FB1;/* rose accent */
+      --tertiary:#A5D6A7; /* mint accent */
+      --ink:#1F1F1F;      /* main text, darker for contrast */
+      --ink-soft:#444;    /* muted text */
+      --link:#0D47A1;     /* navy for readability */
+      --border:#E0E0E0;   /* light gray border */
+      --radius:14px;
+      --shade:rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font:16px/1.6 system-ui,Arial,sans-serif;
+    }
+    a{color:var(--link);text-decoration:none}
+    a:hover{color:#08306B}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
 
-    <style>
-      /* ===========================
-         Pastel, readable theme (fixed)
-         =========================== */
+    /* Navbar */
+    .nav{
+      position:sticky;top:0;z-index:10;
+      background:rgba(255,255,255,.9);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;height:64px
+    }
+    .brand{font-weight:900;font-size:20px;color:var(--ink)}
+    .menu{display:flex;gap:20px}
+    .menu a{color:var(--ink);padding:8px 12px;border-radius:8px;font-weight:500}
+    .menu a:hover{background:var(--primary);color:#fff}
+    .burger{
+      display:none
+    }
+    @media(max-width:820px){
+      .menu{display:none;flex-direction:column;padding:12px 0}
+      .menu.open{display:flex}
+      .burger{
+        display:block;cursor:pointer;
+        border:1px solid var(--border);
+        border-radius:8px;
+        padding:8px 12px;
+        background:var(--surface);
+      }
+    }
+     /* === Buttons & utilities === */
+.btn{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  border:1px solid #64B5F6;
+  border-radius:10px;
+  padding:10px 16px;
+  font-weight:600;
+  letter-spacing:.2px;
+  box-shadow:0 2px 8px var(--shade);
+  transition:transform .06s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.btn:hover{ background:#64B5F6; border-color:#42A5F5; transform:translateY(-1px); box-shadow:0 6px 16px var(--shade); }
+.btn.pink{ background:var(--secondary); border-color:#F06292; }
+.btn.pink:hover{ background:#F06292; border-color:#EC407A; }
 
-      :root {
-        --bg: #f8fafd; /* off-white with hint of blue */
-        --surface: #ffffff; /* cards/sections */
-        --muted: #f2f4f8; /* light section strips */
-        --primary: #bde0fe; /* powder blue */
-        --secondary: #ffc8dd; /* blush pink */
-        --tertiary: #cdeac0; /* mint */
-        --highlight: #faf3dd; /* butter */
-        --ink: #2b2e3a; /* main text (dark slate) */
-        --ink-soft: #5a6270; /* muted text */
-        --link: #355c7d; /* desaturated indigo (readable) */
-        --border: #e3e8ef; /* soft border */
-        --shade: rgba(24, 28, 38, 0.06); /* subtle shadow */
-      }
+.section{ padding:56px 0 }
+.container{ max-width:1100px; margin:0 auto; padding:0 16px }
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:0 8px 24px var(--shade);
+}
+.muted{ background:var(--muted) }
+/* === Hero (more readable) === */
+.hero{
+  position:relative;
+  background:
+    linear-gradient(180deg, rgba(144,202,249,.25) 0%, rgba(244,143,177,.18) 45%, rgba(250,250,252,0) 100%),
+    var(--muted);
+  overflow:hidden;
+}
+.hero-in{
+  display:grid; grid-template-columns: 1.05fr .95fr; gap:28px; align-items:center;
+  min-height:420px;
+}
+.hero h1{ margin:6px 0 10px; font-size:42px; line-height:1.15; color:var(--ink); }
+.hero .sub{ color:#2C3E66; font-weight:800; letter-spacing:.8px; text-transform:uppercase; font-size:12px }
+.hero p{ color:var(--ink-soft); margin:8px 0 0; max-width:52ch }
 
-      /* Base */
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        height: 100%;
-      }
-      body {
-        background: var(--bg);
-        color: var(--ink);
-        line-height: 1.6;
-        font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        color: var(--ink);
-      }
-      p,
-      li,
-      span,
-      small {
-        color: var(--ink);
-      }
+#typing{
+  display:block; margin-top:6px;
+  font-size:20px; font-weight:700; color:#2C3E66;
+  white-space:nowrap; overflow:hidden; border-right:3px solid #2C3E66; padding-right:4px;
+}
+.hero-visual{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-      /* Links */
-      a {
-        color: var(--link);
-      }
-      a:hover,
-      a:focus {
-        color: #2b4a68;
-        text-decoration: none;
-      }
+.hero-visual img{
+  max-width:100%;
+  height:auto;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  box-shadow:0 8px 24px var(--shade);
+  display:block;
+}
+/* === About === */
+.section{ padding:56px 0 }
+.muted{ background:var(--muted) }
 
-      /* Buttons (Bootstrap friendly) */
-      .btn,
-      .button {
-        background: var(--primary);
-        color: var(--ink);
-        border: 1px solid #9cccfb;
-        border-radius: 12px;
-        transition: transform 0.06s ease, background 0.2s ease, border-color 0.2s ease;
-      }
-      .btn:hover,
-      .button:hover {
-        background: #a8d5fe;
-        border-color: #87c3fb;
-        transform: translateY(-1px);
-      }
-      .btn-primary {
-        background: var(--secondary);
-        border-color: #ffb0cc;
-        color: var(--ink);
-      }
-      .btn-primary:hover {
-        background: #ffbcd6;
-        border-color: #ffa5c8;
-      }
+.about-wrap{
+  display:grid; grid-template-columns: 1fr 1.2fr; gap:24px;
+}
+@media (max-width: 820px){ .about-wrap{ grid-template-columns:1fr } }
 
-      /* Navbar: soft, readable, glassy */
-      #ftco-navbar {
-        background: rgba(255, 255, 255, 0.7) !important;
-        backdrop-filter: blur(8px);
-        border-bottom: 1px solid var(--border);
-      }
-      .navbar-dark .navbar-brand,
-      .navbar-dark .navbar-nav .nav-link {
-        color: var(--ink) !important;
-      }
-      .navbar-dark .navbar-nav .nav-link:hover {
-        color: var(--link) !important;
-      }
-      .navbar-dark .navbar-toggler {
-        border-color: var(--border);
-      }
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:0 8px 24px var(--shade);
+}
 
-      /* Hero overlay: gentle pastel gradient */
-      .hero .overlay {
-        background: linear-gradient(
-          180deg,
-          rgba(189, 224, 254, 0.55) 0%,
-          rgba(255, 200, 221, 0.35) 40%,
-          rgba(248, 250, 253, 0) 100%
-        );
-      }
+.about-card{ padding:24px }
+.about-card h2{ margin:0 0 10px; color:var(--ink) }
+.about-card p{ color:var(--ink); margin:8px 0 14px; }
 
-      /* Section cards / about box */
-      .about-mf .box-shadow-full,
-      .ftco-section,
-      .resume-wrap,
-      .box {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        box-shadow: 0 8px 24px var(--shade);
-      }
-      .ftco-section {
-        padding: 3rem 1rem;
-        background: var(--muted);
-        border: none;
-        box-shadow: none;
-      }
+.about-list{ padding-left:18px; margin:0 }
+.about-list li{ margin:6px 0; color:var(--ink) }
+.about-list b{ color:#111 }
 
-      /* Skills */
-      .skill-mf .title-s {
-        color: var(--ink);
-      }
-      .skill-mf .progress {
-        margin: 0.5rem 0 1.1rem 0;
-        height: 0.7rem;
-        background: #edeff5;
-        border-radius: 10px;
-        overflow: hidden;
-        border: 1px solid var(--border);
-      }
-      .skill-mf .progress .progress-bar {
-        height: 100%;
-        background: linear-gradient(90deg, var(--primary), var(--secondary));
-      }
+.skills .row{ display:grid; grid-template-columns:1fr 1fr; gap:12px 24px }
+@media (max-width:700px){ .skills .row{ grid-template-columns:1fr } }
 
-      /* Typing animation */
-      #typing-animation {
-        font-size: 30px;
-        font-weight: 700;
-        color: #7b8ba5; /* soft slate */
-        white-space: nowrap;
-        overflow: hidden;
-        border-right: 3px solid #7b8ba5;
-        animation: typing 3s steps(20, end) infinite, caret 0.8s step-end infinite;
-      }
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-        to {
-          width: 100%;
-        }
-      }
-      @keyframes caret {
-        50% {
-          border-right-color: transparent;
-        }
-      }
+.skill{
+  display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:10px;
+  font-weight:600; color:var(--ink);
+}
+.skill .bar{
+  height:.7rem; background:#E9EDF3; border:1px solid var(--border);
+  border-radius:10px; overflow:hidden;
+}
+.skill .bar > i{
+  display:block; height:100%;
+  background:linear-gradient(90deg, var(--primary), var(--secondary));
+}
+.skill .pct{ font-variant-numeric: tabular-nums; color:#2C3E66; font-weight:700 }
+/* === Education === */
+.edu-wrap{
+  display:grid; gap:20px;
+}
+.edu-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px 24px;
+  box-shadow:0 6px 20px var(--shade);
+}
+.edu-card h3{
+  margin:4px 0;
+  font-size:20px;
+  color:var(--ink);
+}
+.edu-card .school{
+  font-weight:600;
+  color:#2C3E66;
+  margin-bottom:6px;
+}
+.edu-card .date{
+  font-size:14px;
+  font-weight:500;
+  color:var(--ink-soft);
+  margin-bottom:4px;
+}
+.edu-card p{
+  margin:6px 0 0;
+  color:var(--ink-soft);
+}
+/* === Projects === */
+.proj-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  gap:24px;
+}
+.proj-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 6px 20px var(--shade);
+  display:flex;
+  flex-direction:column;
+}
+.proj-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+.proj-card .body{
+  padding:16px 18px;
+  flex:1;
+  display:flex;
+  flex-dir
+/* === Contact === */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:20px;
+}
+.contact-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  text-align:center;
+  box-shadow:0 6px 20px var(--shade);
+}
+.contact-card h3{
+  margin:10px 0;
+  font-size:18px;
+  color:var(--ink);
+}
+.contact-card p,
+.contact-card a{
+  color:var(--ink-soft);
+  font-size:15px;
+}
+.contact-card a:hover{ color:var(--link); }
 
-      /* Counters strip */
-      #section-counter .block-18 {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        box-shadow: 0 6px 18px var(--shade);
-      }
-      #section-counter .number {
-        color: var(--ink);
-      }
-      #section-counter span {
-        color: var(--ink-soft);
-      }
-
-      /* “Hire me” band (github CTA) */
-      .ftco-hireme {
-        background-blend-mode: overlay;
-        background-color: rgba(189, 224, 254, 0.25); /* powder-blue veil */
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-      }
-      .ftco-hireme h2,
-      .ftco-hireme h4 {
-        color: var(--ink);
-      }
-
-      /* Cards in contact section */
-      .contact-section .box {
-        background: var(--surface);
-      }
-      .contact-section h3 {
-        color: var(--ink);
-      }
-      .contact-section p a {
-        color: var(--link);
-      }
-
-      /* Footer */
-      .ftco-footer {
-        background: var(--surface);
-        border-top: 1px solid var(--border);
-      }
-      .ftco-footer p,
-      .ftco-footer a {
-        color: var(--ink-soft);
-      }
-      .ftco-footer a:hover {
-        color: var(--link);
-      }
-
-      /* Images & hover */
-      .zoom-effect {
-        overflow: hidden;
-        transition: transform 0.25s ease;
-        border-radius: 16px;
-      }
-      .zoom-effect:hover {
-        transform: scale(1.03);
-      }
-
-      /* Small helpers */
-      .underline {
-        width: 72px;
-        height: 4px;
-        border-radius: 4px;
-        background: linear-gradient(90deg, var(--primary), var(--secondary));
-      }
-      .big,
-      .big-2 {
-        color: var(--ink-soft);
-        opacity: 0.2;
-      }
-
-      /* Selection */
-      ::selection {
-        background: var(--secondary);
-        color: var(--ink);
-      }
-    </style>
-  </head>
-
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Ankita Singh</a>
-        <button
-          class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle"
-          type="button"
-          data-toggle="collapse"
-          data-target="#ftco-nav"
-          aria-controls="ftco-nav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="oi oi-menu"></span> Menu
-        </button>
-
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav nav ml-auto">
-            <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-            <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-            <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Education</span></a></li>
-            <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-            <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-          </ul>
+.socials{
+  margin-top:24px;
+  display:flex;
+  justify-content:center;
+  gap:16px;
+}
+.socials a{
+  display:inline-block;
+  width:44px; height:44px;
+  border-radius:50%;
+  background:var(--muted);
+  display:flex; align-items:center; justify-content:center;
+  font-size:20px;
+  color:var(--link);
+  text-decoration:none;
+}
+.socials a:hover{ background:var(--pri
+/* === Footer === */
+footer{
+  background:var(--muted);
+  padding:40px 20px;
+  text-align:center;
+  border-top:1px solid var(--border);
+}
+footer p{
+  margin:8px 0;
+  color:var(--ink-soft);
+  font-size:15px;
+}
+footer .fun-fact{
+  font-style:italic;
+  color:var(--ink);
+  margin-top:12px;
+}
+footer a{
+  color:var(--link);
+  text-decoration:none;
+  font-weight:600;
+}
+footer a:hover{ color:#08306B; }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Ankita Singh</div>
+      <nav>
+        <button class="burger" id="burger">☰ Menu</button>
+        <div class="menu" id="menu">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </div>
-      </div>
-    </nav>
-
-    <!-- HERO -->
-    <section id="home-section" class="hero">
-      <div class="home-slider owl-carousel">
-        <div class="slider-item">
-          <div class="overlay"></div>
-          <div class="container">
-            <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-              <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.png);">
-                <div class="overlay"></div>
-              </div>
-              <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '100%' }">
-                <div class="text">
-                  <span class="subheading">Hello!</span>
-                  <h1 class="mb-4 mt-3">I'm <span>Ankita Singh</span></h1>
-
-                  <!-- Typing -->
-                  <span id="typing-animation"></span>
-
-                  <script>
-                    // Initialize the typing animation
-                    const typingAnimationElement = document.getElementById("typing-animation");
-                    const typingTexts = ["Computer Science Student "];
-
-                    function playTypingAnimation(text) {
-                      for (let i = 0; i < text.length; i++) {
-                        setTimeout(() => {
-                          typingAnimationElement.textContent += text[i];
-                        }, i * 200);
-                      }
-                      setTimeout(() => {
-                        typingAnimationElement.textContent = "";
-                        playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-                      }, text.length * 200);
-                    }
-                    playTypingAnimation(typingTexts[0]);
-                  </script>
-
-                  <br /><br />
-                  <h2></h2>
-                  <h2 class="d-flex" style="margin-bottom: 0"></h2>
-                  <br />
-                  <p><a href="https://github.com/AnkitaS99" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> <!-- /.home-slider -->
-    </section>
-
-    <!-- ABOUT -->
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-      <div class="container">
-        <div class="row">
-          <div class="row d-flex align-items-stretch">
-            <div class="col-md-6 col-lg-5 d-flex">
-              <div class="img-about img d-flex align-items-stretch">
-                <div class="overlay">
-                  <div class="row">
-                    <div class="about-info">
-                      <p><span class="title-s">Name: </span> <span>Ankita Singh</span></p>
-                      <p><span class="title-s">Education: </span> <span>Currently Student</span></p>
-                      <p><span class="title-s">Experience: </span> <span>Fresher</span></p>
-                      <p><span class="title-s">Address: </span> <span>Delhi, India</span></p>
-                    </div>
-                  </div>
-
-                  <div class="skill-mf">
-                    <p class="title-s"><h3>Skills</h3></p>
-                    <span>C</span> <span class="pull-right">75%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>C++</span> <span class="pull-right">65%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>Html,Css,Js</span> <span class="pull-right">90%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>Statistical Analysis</span> <span class="pull-right">60%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>Visual Basic</span> <span class="pull-right">80%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </div> <!-- /.overlay -->
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-              <div class="row justify-content-start pb-3">
-                <div class="col-md-12 heading-section ftco-animate">
-                  <h1 class="big">About</h1>
-                  <h2 class="mb-4">About Me</h2>
-                  <p>
-                    I am a passionate first-generation computer science student from India, dedicated to leveraging technology for social good.
-                    As a proud advocate for women in STEM, I actively participate in initiatives to encourage more young women to pursue careers in technology.
-                    My journey in computer science is fueled by curiosity and resilience, navigating challenges with a determination to succeed.
-                  </p>
-                  <ul class="about-info mt-4 px-md-0 px-2">
-                    <li class="d-flex"><span>Profile:</span> <span>Computer Science &amp; Applications</span></li>
-                    <li class="d-flex"><span>Education:</span> <span>Bachelor of Computer Application</span></li>
-                    <li class="d-flex"><span>Language:</span> <span>English, Hindi, German(A2)</span></li>
-                    <li class="d-flex"><span>Interest:</span> <span>Learning new languages, Photography, Reading</span></li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="counter-wrap ftco-animate d-flex mt-md-3">
-                <div class="text">
-                  <p class="mb-4">
-                    <span class="number" data-number="10">0</span> <span>+</span>
-                    <span>&nbsp; Projects completed</span>
-                  </p>
-                  <p><a href="https://www.linkedin.com/in/ankita-singh-938a4625b/" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
-                </div>
-              </div>
-            </div>
-          </div> <!-- /.row d-flex -->
-        </div>
-      </div>
-    </section>
-
-    <!-- RESUME -->
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-      <div class="container">
-        <div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Mission Statement</h1>
-            <h2 class="mb-4"></h2>
-            <p>As a first-generation woman from rural India with a strong foundation in computer science, I am passionate about leveraging technology to drive social impact and innovation.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <h1 class="big-4">Education</h1>
-          <div class="underline"></div>
-        </div>
-        <br /><br /><br /><br />
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">2022-Present</span>
-              <h2>Bachelor of Computer Applications</h2>
-              <span class="position">Banasthali Vidyapith University</span>
-              <p class="mt-4">Grade: First class distinction.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">2021-2022</span>
-              <h2>Diploma in Internet and Web Applications</h2>
-              <span class="position">Banasthali Vidyapith University</span>
-              <p class="mt-4">Grade: First class.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date"></span>
-              <h2>Higher Secondary School</h2>
-              <span class="position">Pushp Niketan School</span>
-              <p class="mt-4">Grade: First class.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date"></span>
-              <h2>High School</h2>
-              <span class="position">St.Mary's Convent Sr. Sec. School</span>
-              <p class="mt-4">Grade: First class.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-center mt-5">
-          <div class="col-md-6 text-center ftco-animate">
-            <p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS (commented-out sample retained) -->
-    <section class="ftco-section" id="project-section">
-  <div class="container">
-    <div class="row justify-content-center mb-5 pb-5">
-      <div class="col-md-7 heading-section text-center ftco-animate">
-        <h1 class="big big-2">Projects</h1>
-        <h2 class="mb-4">Projects</h2>
-        <p>A small selection of my work using JavaScript and PHP.</p>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+<section id="home" class="hero section">
+  <div class="container hero-in">
+    <div>
+      <div class="sub">Hello!</div>
+      <h1>I'm <span style="color:var(--link);">Ankita Singh</span></h1>
+      <span id="typing"></span>
+      <p>I’m a computer science student focused on building useful, accessible tools with JavaScript, PHP, and data-driven thinking.</p>
+      <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn" href="https://github.com/AnkitaS99">My works</a>
+        <a class="btn pink" href="#projects">See Projects</a>
       </div>
     </div>
+    <!-- Keep the image reference -->
+   <!-- New -->
+<div class="hero-visual">
+  <img src="images/myimg.jpg" alt="Ankita Singh portrait" width="800" height="600" />
+</div>
 
-    <div class="row d-flex">
-      <!-- Project 1: AwardList System (Live, under professor) -->
-      <div class="col-md-4 d-flex ftco-animate">
-        <div class="blog-entry justify-content-end">
-          <!-- Use your own thumbnail in images/awardlist.jpg; the pastel bg is a safe fallback -->
-          <a href="#" class="block-20 zoom-effect" style="background-image: url('images/awardlist.jpg'); background-color:#FAF3DD;">
-          </a>
-          <div class="text mt-3 float-right d-block">
-            <h3 class="heading">
-              <a href="#">AwardList System (Live Project)</a>
-            </h3>
-            <p class="mb-2" style="margin-bottom:.5rem;">
-              Built under faculty supervision to manage award nominations, approvals, and publishing.
-            </p>
-            <ul class="mb-3" style="padding-left:1.1rem;">
-              <li>Role-based access (Professor, Committee, Student)</li>
-              <li>Nomination & review workflow with email notifications</li>
-              <li>CSV export, printable award sheets</li>
-            </ul>
-            <p class="mb-1"><strong>Stack:</strong> PHP, MySQL, JS (Fetch/AJAX), Bootstrap</p>
-            <div class="d-flex gap-2" style="gap:.5rem;">
-              <a href="#" class="btn btn-primary btn-sm px-3">Live</a>
-              <a href="#" class="btn btn-sm px-3">Source</a>
-            </div>
+  </div>
+</section>
+  <!-- ABOUT -->
+<section id="about" class="section muted">
+  <div class="container about-wrap">
+    <!-- Left: About text -->
+    <div class="card about-card">
+      <h2>About Me</h2>
+      <p>
+        I am a passionate first-generation computer science student from India, dedicated to leveraging technology for social good.
+        As a proud advocate for women in STEM, I encourage more young women to pursue careers in technology.
+        My journey in computer science is fueled by curiosity and resilience.
+      </p>
+
+      <ul class="about-list">
+        <li><b>Profile:</b> Computer Science &amp; Applications</li>
+        <li><b>Education:</b> Bachelor of Computer Application</li>
+        <li><b>Languages:</b> English, Hindi, German (A2)</li>
+        <li><b>Interests:</b> Languages, Photography, Reading</li>
+      </ul>
+    </div>
+
+    <!-- Right: Skills -->
+    <div class="card about-card">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="row">
+          <div class="skill">
+            <span>C</span>
+            <div class="bar"><i style="width:75%"></i></div>
+            <span class="pct">75%</span>
+          </div>
+
+          <div class="skill">
+            <span>C++</span>
+            <div class="bar"><i style="width:65%"></i></div>
+            <span class="pct">65%</span>
+          </div>
+
+          <div class="skill">
+            <span>HTML, CSS, JS</span>
+            <div class="bar"><i style="width:90%"></i></div>
+            <span class="pct">90%</span>
+          </div>
+
+          <div class="skill">
+            <span>Statistical Analysis</span>
+            <div class="bar"><i style="width:60%"></i></div>
+            <span class="pct">60%</span>
+          </div>
+
+          <div class="skill">
+            <span>Visual Basic</span>
+            <div class="bar"><i style="width:80%"></i></div>
+            <span class="pct">80%</span>
           </div>
         </div>
       </div>
 
-      <!-- Project 2: Portfolio Website -->
-      <div class="col-md-4 d-flex ftco-animate">
-        <div class="blog-entry justify-content-end">
-          <!-- Replace images/portfolio.jpg with your thumbnail -->
-          <a href="#" class="block-20 zoom-effect" style="background-image: url('images/portfolio.jpg'); background-color:#BDE0FE;">
-          </a>
-          <div class="text mt-3 float-right d-block">
-            <h3 class="heading">
-              <a href="#">Personal Portfolio Website</a>
-            </h3>
-            <p class="mb-2" style="margin-bottom:.5rem;">
-              Responsive, pastel-themed portfolio showcasing projects, skills, and contact details.
-            </p>
-            <ul class="mb-3" style="padding-left:1.1rem;">
-              <li>SPA-like smooth scrolling and animations</li>
-              <li>Contact form (PHP mail handler)</li>
-              <li>GitHub Projects feed widget</li>
-            </ul>
-            <p class="mb-1"><strong>Stack:</strong> PHP (form), Vanilla JS, HTML5, CSS3</p>
-            <div class="d-flex gap-2" style="gap:.5rem;">
-              <a href="#" class="btn btn-primary btn-sm px-3">Live</a>
-              <a href="#" class="btn btn-sm px-3">Source</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3: Volunteer Management System -->
-      <div class="col-md-4 d-flex ftco-animate">
-        <div class="blog-entry justify-content-end">
-          <!-- Replace images/volunteer.jpg with your thumbnail -->
-          <a href="#" class="block-20 zoom-effect" style="background-image: url('images/volunteer.jpg'); background-color:#CDEAC0;">
-          </a>
-          <div class="text mt-3 float-right d-block">
-            <h3 class="heading">
-              <a href="#">Volunteer Management System</a>
-            </h3>
-            <p class="mb-2" style="margin-bottom:.5rem;">
-              End-to-end platform to register volunteers, assign events, and track hours & impact.
-            </p>
-            <ul class="mb-3" style="padding-left:1.1rem;">
-              <li>Event creation & slot booking</li>
-              <li>Attendance & hours tracker with reports</li>
-              <li>Admin dashboard (charts & summaries)</li>
-            </ul>
-            <p class="mb-1"><strong>Stack:</strong> PHP, MySQL, JS (Charting), Bootstrap</p>
-            <div class="d-flex gap-2" style="gap:.5rem;">
-              <a href="#" class="btn btn-primary btn-sm px-3">Live</a>
-              <a href="#" class="btn btn-sm px-3">Source</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- /.row -->
-
-    <!-- Optional: call-to-action under projects -->
-    <div class="row justify-content-center mt-5">
-      <div class="col-md-8 text-center">
-        <p>Want the full case studies or code walkthroughs? <a href="#contact-section">Contact me</a>.</p>
+      <div style="margin-top:16px; color:var(--ink-soft);">
+        <b style="color:var(--ink);">10+</b> projects completed
+        &nbsp;·&nbsp;
+        <a class="btn pink" href="https://www.linkedin.com/in/ankita-singh-938a4625b/">LinkedIn</a>
       </div>
     </div>
   </div>
 </section>
+<!-- EDUCATION -->
+<section id="education" class="section">
+  <div class="container">
+    <h2>Education</h2>
+    <div class="edu-wrap">
+      
+      <div class="edu-card">
+        <div class="date">2022 – Present</div>
+        <h3>Bachelor of Computer Applications</h3>
+        <div class="school">Banasthali Vidyapith University</div>
+        <p>Grade: First class distinction.</p>
+      </div>
 
+      <div class="edu-card">
+        <div class="date">2021 – 2022</div>
+        <h3>Diploma in Internet and Web Applications</h3>
+        <div class="school">Banasthali Vidyapith University</div>
+        <p>Grade: First class.</p>
+      </div>
 
-    <!-- COUNTERS + GITHUB CTA -->
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-      <div class="container">
-        <div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="20">0</strong>
-                <span>Achievements</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="30">0</strong>
-                <span>Projects</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="1000">0</strong>
-                <span>Lines of Code written</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="500">0</strong>
-                <span>Cups of coffee</span>
-              </div>
-            </div>
+      <div class="edu-card">
+        <div class="date">–</div>
+        <h3>Higher Secondary School</h3>
+        <div class="school">Pushp Niketan School</div>
+        <p>Grade: First class.</p>
+      </div>
+
+      <div class="edu-card">
+        <div class="date">–</div>
+        <h3>High School</h3>
+        <div class="school">St. Mary’s Convent Sr. Sec. School</div>
+        <p>Grade: First class.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- PROJECTS -->
+<section id="projects" class="section muted">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="proj-grid">
+      
+      <!-- Project 1 -->
+          <h3>AwardList System</h3>
+          <p>Live project under professor supervision to manage award nominations, approvals, and publishing using JS + PHP.</p>
+          <div class="btns">
+            <a class="btn" href="#">Live</a>
+            <a class="btn pink" href="#">Source</a>
           </div>
         </div>
       </div>
 
-      <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-        <div class="row justify-content-center">
-          <div class="col-md-7 ftco-animate text-center">
-            <h2>More projects on<span> Github </span></h2>
-            <div class="heading">
-              <h4>I love to solve problems.</h4>
-              <br />
-              <p><a href="https://github.com/AnkitaS99" class="btn btn-primary py-3 px-5">GitHub</a></p>
-            </div>
+      <!-- Project 2 -->
+          <h3>Portfolio Website</h3>
+          <p>Responsive personal site with pastel theme, smooth scrolling, and contact form using JS + PHP.</p>
+          <div class="btns">
+            <a class="btn" href="#">Live</a>
+            <a class="btn pink" href="#">Source</a>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Below are the details to reach out to me!</p>
-          </div>
-        </div>
-
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-map-signs"></span>
-              </div>
-              <h3 class="mb-4">Address</h3>
-              <p>Rajasthan, India</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-phone2"></span>
-              </div>
-              <h3 class="mb-4">Contact Number</h3>
-              <p><a href="tel://0101010101"> NA </a></p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-paper-plane"></span>
-              </div>
-              <h3 class="mb-4">Email Address</h3>
-              <p><a href="mailto:as10090174@gmail.com">as10090174@gmail.com</a></p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-globe"></span>
-              </div>
-              <h3 class="mb-4">Download Resume</h3>
-              <p><a href="https://drive.google.com/file/d/1CAHsF9cJvnVknqHv5UAmU5sh3oLUTivh/view?usp=sharing">Go to Resume</a></p>
-            </div>
-          </div>
-
-          <div class="container">
-            <br />
-            <ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-              <li class="ftco-animate normal-txt">Find me on</li>
-              <li class="ftco-animate"><a href="https://github.com/AnkitaS99"><span class="icon-github"></span></a></li>
-              <li class="ftco-animate"><a href="https://www.linkedin.com/in/ankita-singh-938a4625b/"><span class="icon-linkedin"></span></a></li>
-            </ul>
-            <br />
+      <!-- Project 3 -->
+          <h3>Volunteer Management</h3>
+          <p>End-to-end platform to register volunteers, assign events, and track hours with PHP + JS dashboards.</p>
+          <div class="btns">
+            <a class="btn" href="#">Live</a>
+            <a class="btn pink" href="#">Source</a>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="ftco-footer ftco-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-              All rights reserved | This template is made with by
-              <a href="https://colorlib.com" target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-        </div>
+    </div>
+  </div>
+</section>
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <p>Below are the details to reach out to me!</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Address</h3>
+        <p>Rajasthan, India</p>
       </div>
-    </footer>
-
-    <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen">
-      <svg class="circular" width="48px" height="48px">
-        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"></circle>
-        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"></circle>
-      </svg>
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p><a href="mailto:as10090174@gmail.com">as10090174@gmail.com</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>LinkedIn</h3>
+        <p><a href="https://www.linkedin.com/in/ankita-singh-938a4625b/">View Profile</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>GitHub</h3>
+        <p><a href="https://github.com/AnkitaS99">github.com/AnkitaS99</a></p>
+      </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/scrollax.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+    <div class="socials">
+      <a href="https://github.com/AnkitaS99" aria-label="GitHub">🐙</a>
+      <a href="https://www.linkedin.com/in/ankita-singh-938a4625b/" aria-label="LinkedIn">💼</a>
+      <a href="mailto:as10090174@gmail.com" aria-label="Email">✉️</a>
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <p>&copy; <script>document.write(new Date().getFullYear());</script> Ankita Singh. All rights reserved.</p>
+  <p>If you made it this far... here’s a fun fact about me 🎉</p>
+  <p class="fun-fact">
+    I once built my first “big project” entirely in one night powered by <b>coffee</b> ☕ and <b>sheer curiosity</b> 🚀
+  </p>
+  <p><a href="#home">⬆ Back to top</a></p>
+</footer>
+</body>
 </html>
+
