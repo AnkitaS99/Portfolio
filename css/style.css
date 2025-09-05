@@ -143,23 +143,25 @@ a:hover{ color:#08306B; }
 .about-list{ padding-left:18px; margin:0; }
 .about-list li{ margin:6px 0; color:var(--ink); }
 .about-list b{ color:#111; }
+.skills-categories {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px var(--shade);
+  padding: 24px;
+  line-height: 1.7;
+}
 
-.skills .row{ display:grid; grid-template-columns:1fr 1fr; gap:12px 24px; }
-@media (max-width:700px){ .skills .row{ grid-template-columns:1fr; } }
+.skills-categories p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: var(--ink-soft);
+}
 
-.skill{
-  display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:10px;
-  font-weight:600; color:var(--ink);
+.skills-categories b {
+  color: var(--ink);
+  font-weight: 600;
 }
-.skill .bar{
-  height:.7rem; background:#E9EDF3; border:1px solid var(--border);
-  border-radius:10px; overflow:hidden;
-}
-.skill .bar > i{
-  display:block; height:100%;
-  background:linear-gradient(90deg, var(--primary), var(--secondary));
-}
-.skill .pct{ font-variant-numeric: tabular-nums; color:#2C3E66; font-weight:700; }
 
 /* ===========================
    6) Education
