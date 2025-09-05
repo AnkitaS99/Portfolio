@@ -2,358 +2,498 @@
 <html lang="en">
   <head>
     <title>Ankita Singh Portfolio</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/ionicons.min.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
-    <link rel="stylesheet" href="css/aos.css">
+    <style>
+      /* ===========================
+         Pastel, readable theme (fixed)
+         =========================== */
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+      :root {
+        --bg: #f8fafd; /* off-white with hint of blue */
+        --surface: #ffffff; /* cards/sections */
+        --muted: #f2f4f8; /* light section strips */
+        --primary: #bde0fe; /* powder blue */
+        --secondary: #ffc8dd; /* blush pink */
+        --tertiary: #cdeac0; /* mint */
+        --highlight: #faf3dd; /* butter */
+        --ink: #2b2e3a; /* main text (dark slate) */
+        --ink-soft: #5a6270; /* muted text */
+        --link: #355c7d; /* desaturated indigo (readable) */
+        --border: #e3e8ef; /* soft border */
+        --shade: rgba(24, 28, 38, 0.06); /* subtle shadow */
+      }
 
+      /* Base */
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+        font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: var(--ink);
+      }
+      p,
+      li,
+      span,
+      small {
+        color: var(--ink);
+      }
 
-<style>
-/* ===========================
-   Pastel, readable theme
-   (drop-in replacement)
-   =========================== */
+      /* Links */
+      a {
+        color: var(--link);
+      }
+      a:hover,
+      a:focus {
+        color: #2b4a68;
+        text-decoration: none;
+      }
 
-:root{
-  /* Palette (soft but contrast-safe) */
-  --bg:        #F8FAFD;  /* off-white with hint of blue */
-  --surface:   #FFFFFF;  /* cards/sections */
-  --muted:     #F2F4F8;  /* light section strips */
-  --primary:   #BDE0FE;  /* powder blue */
-  --secondary: #FFC8DD;  /* blush pink */
-  --tertiary:  #CDEAC0;  /* mint */
-  --highlight: #FAF3DD;  /* butter */
-  --ink:       #2B2E3A;  /* main text (dark slate) */
-  --ink-soft:  #5A6270;  /* muted text */
-  --link:      #355C7D;  /* desaturated indigo (readable) */
-  --border:    #E3E8EF;  /* soft border */
-  --shade:     rgba(24, 28, 38, 0.06); /* subtle shadow */
-}
+      /* Buttons (Bootstrap friendly) */
+      .btn,
+      .button {
+        background: var(--primary);
+        color: var(--ink);
+        border: 1px solid #9cccfb;
+        border-radius: 12px;
+        transition: transform 0.06s ease, background 0.2s ease, border-color 0.2s ease;
+      }
+      .btn:hover,
+      .button:hover {
+        background: #a8d5fe;
+        border-color: #87c3fb;
+        transform: translateY(-1px);
+      }
+      .btn-primary {
+        background: var(--secondary);
+        border-color: #ffb0cc;
+        color: var(--ink);
+      }
+      .btn-primary:hover {
+        background: #ffbcd6;
+        border-color: #ffa5c8;
+      }
 
-/* Base */
-* { box-sizing: border-box; }
-html,body{ height:100%; }
-body{
-  background: var(--bg);
-  color: var(--ink);
-  line-height: 1.6;
-}
-h1,h2,h3,h4,h5,h6{
-  color: var(--ink);
-}
-p,li,span,small{ color: var(--ink); }
+      /* Navbar: soft, readable, glassy */
+      #ftco-navbar {
+        background: rgba(255, 255, 255, 0.7) !important;
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border);
+      }
+      .navbar-dark .navbar-brand,
+      .navbar-dark .navbar-nav .nav-link {
+        color: var(--ink) !important;
+      }
+      .navbar-dark .navbar-nav .nav-link:hover {
+        color: var(--link) !important;
+      }
+      .navbar-dark .navbar-toggler {
+        border-color: var(--border);
+      }
 
-/* Links */
-a{ color: var(--link); }
-a:hover, a:focus{ color: #2b4a68; text-decoration: none; }
+      /* Hero overlay: gentle pastel gradient */
+      .hero .overlay {
+        background: linear-gradient(
+          180deg,
+          rgba(189, 224, 254, 0.55) 0%,
+          rgba(255, 200, 221, 0.35) 40%,
+          rgba(248, 250, 253, 0) 100%
+        );
+      }
 
-/* Buttons (Bootstrap friendly) */
-.btn,
-.button{
-  background: var(--primary);
-  color: var(--ink);
-  border: 1px solid #9CCCFB;
-  border-radius: 12px;
-  transition: transform .06s ease, background .2s ease, border-color .2s ease;
-}
-.btn:hover,
-.button:hover{
-  background: #A8D5FE;
-  border-color: #87C3FB;
-  transform: translateY(-1px);
-}
-.btn-primary{
-  background: var(--secondary);
-  border-color: #FFB0CC;
-  color: var(--ink);
-}
-.btn-primary:hover{
-  background: #FFBCD6;
-  border-color: #FFA5C8;
-}
+      /* Section cards / about box */
+      .about-mf .box-shadow-full,
+      .ftco-section,
+      .resume-wrap,
+      .box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: 0 8px 24px var(--shade);
+      }
+      .ftco-section {
+        padding: 3rem 1rem;
+        background: var(--muted);
+        border: none;
+        box-shadow: none;
+      }
 
-/* Navbar: soft, readable, glassy */
-#ftco-navbar{
-  background: rgba(255,255,255,0.7) !important;
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-}
-.navbar-dark .navbar-brand,
-.navbar-dark .navbar-nav .nav-link{
-  color: var(--ink) !important;
-}
-.navbar-dark .navbar-nav .nav-link:hover{
-  color: var(--link) !important;
-}
-.navbar-dark .navbar-toggler{
-  border-co
+      /* Skills */
+      .skill-mf .title-s {
+        color: var(--ink);
+      }
+      .skill-mf .progress {
+        margin: 0.5rem 0 1.1rem 0;
+        height: 0.7rem;
+        background: #edeff5;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+      .skill-mf .progress .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+      }
 
+      /* Typing animation */
+      #typing-animation {
+        font-size: 30px;
+        font-weight: 700;
+        color: #7b8ba5; /* soft slate */
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid #7b8ba5;
+        animation: typing 3s steps(20, end) infinite, caret 0.8s step-end infinite;
+      }
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      @keyframes caret {
+        50% {
+          border-right-color: transparent;
+        }
+      }
+
+      /* Counters strip */
+      #section-counter .block-18 {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: 0 6px 18px var(--shade);
+      }
+      #section-counter .number {
+        color: var(--ink);
+      }
+      #section-counter span {
+        color: var(--ink-soft);
+      }
+
+      /* “Hire me” band (github CTA) */
+      .ftco-hireme {
+        background-blend-mode: overlay;
+        background-color: rgba(189, 224, 254, 0.25); /* powder-blue veil */
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+      .ftco-hireme h2,
+      .ftco-hireme h4 {
+        color: var(--ink);
+      }
+
+      /* Cards in contact section */
+      .contact-section .box {
+        background: var(--surface);
+      }
+      .contact-section h3 {
+        color: var(--ink);
+      }
+      .contact-section p a {
+        color: var(--link);
+      }
+
+      /* Footer */
+      .ftco-footer {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+      }
+      .ftco-footer p,
+      .ftco-footer a {
+        color: var(--ink-soft);
+      }
+      .ftco-footer a:hover {
+        color: var(--link);
+      }
+
+      /* Images & hover */
+      .zoom-effect {
+        overflow: hidden;
+        transition: transform 0.25s ease;
+        border-radius: 16px;
+      }
+      .zoom-effect:hover {
+        transform: scale(1.03);
+      }
+
+      /* Small helpers */
+      .underline {
+        width: 72px;
+        height: 4px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+      }
+      .big,
+      .big-2 {
+        color: var(--ink-soft);
+        opacity: 0.2;
+      }
+
+      /* Selection */
+      ::selection {
+        background: var(--secondary);
+        color: var(--ink);
+      }
+    </style>
   </head>
+
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
-	  
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Ankita Singh</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Ankita Singh</a>
+        <button
+          class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle"
+          type="button"
+          data-toggle="collapse"
+          data-target="#ftco-nav"
+          aria-controls="ftco-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="oi oi-menu"></span> Menu
+        </button>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Education</span></a></li>
-	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	       <div class="slider-item ">
-	      	<div class="overlay"></div>
-	         <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.png);">
-	          	 <div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '100%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            <h1 class="mb-4 mt-3">I'm <span>Ankita Singh</span></h1>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav nav ml-auto">
+            <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+            <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+            <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Education</span></a></li>
+            <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+            <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-						<!-- Element to contain animated typing -->
-						<span id="typing-animation"></span>
-                         
-						<script>
+    <!-- HERO -->
+    <section id="home-section" class="hero">
+      <div class="home-slider owl-carousel">
+        <div class="slider-item">
+          <div class="overlay"></div>
+          <div class="container">
+            <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+              <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.png);">
+                <div class="overlay"></div>
+              </div>
+              <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '100%' }">
+                <div class="text">
+                  <span class="subheading">Hello!</span>
+                  <h1 class="mb-4 mt-3">I'm <span>Ankita Singh</span></h1>
 
-						// Initialize the typing animation
-						const typingAnimationElement = document.getElementById('typing-animation');
+                  <!-- Typing -->
+                  <span id="typing-animation"></span>
 
-						// Create an array of typing text
-						const typingTexts = [
-						'Computer Science Student '
-						];
+                  <script>
+                    // Initialize the typing animation
+                    const typingAnimationElement = document.getElementById("typing-animation");
+                    const typingTexts = ["Computer Science Student "];
 
-						// Create a function to display the typing animation for a given text
-						function playTypingAnimation(text) {
-						// Loop through each character and add it to the element
-						for (let i = 0; i < text.length; i++) {
-							setTimeout(() => {
-							typingAnimationElement.textContent += text[i];
-							}, i * 200); // Increase the delay to slow down the typing animation
-						}
+                    function playTypingAnimation(text) {
+                      for (let i = 0; i < text.length; i++) {
+                        setTimeout(() => {
+                          typingAnimationElement.textContent += text[i];
+                        }, i * 200);
+                      }
+                      setTimeout(() => {
+                        typingAnimationElement.textContent = "";
+                        playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+                      }, text.length * 200);
+                    }
+                    playTypingAnimation(typingTexts[0]);
+                  </script>
 
-						// Once the animation is complete, reset the text and start over
-						setTimeout(() => {
-							typingAnimationElement.textContent = '';
-							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
-						}
-
-						// Start the typing animation loop
-						playTypingAnimation(typingTexts[0]);
-
-						</script>
-
-						<br>
-						<br>
-			            <h2></h2>
-						<h2 class="d-flex" style="margin-bottom: 0"></h2>
-						 <br> 
-			          <p><a href="https://github.com/AnkitaS99" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
-		</div>
+                  <br /><br />
+                  <h2></h2>
+                  <h2 class="d-flex" style="margin-bottom: 0"></h2>
+                  <br />
+                  <p><a href="https://github.com/AnkitaS99" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- /.home-slider -->
     </section>
 
-
-
+    <!-- ABOUT -->
     <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-    	<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-				<!-- <div class="row d-flex"> -->
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="row">
-									<!-- Details next to profile image -->
-	
-									  <div class="about-info">
-										<p><span class="title-s">Name: </span> <span>Ankita Singh</span></p>
-										<p><span class="title-s">Education: </span> <span>Currently Student</span></p>
-										<p><span class="title-s">Experience: </span> <span>Fresher</span></p>
-										<p><span class="title-s">Address: </span> <span>Delhi, India</span></p>
-									  </div>
-				
-								  </div>
+      <div class="container">
+        <div class="row">
+          <div class="row d-flex align-items-stretch">
+            <div class="col-md-6 col-lg-5 d-flex">
+              <div class="img-about img d-flex align-items-stretch">
+                <div class="overlay">
+                  <div class="row">
+                    <div class="about-info">
+                      <p><span class="title-s">Name: </span> <span>Ankita Singh</span></p>
+                      <p><span class="title-s">Education: </span> <span>Currently Student</span></p>
+                      <p><span class="title-s">Experience: </span> <span>Fresher</span></p>
+                      <p><span class="title-s">Address: </span> <span>Delhi, India</span></p>
+                    </div>
+                  </div>
 
-								<div class="skill-mf">
-									<p class="title-s"><h3>Skills</h3></p>
-									<span>C</span> <span class="pull-right">75%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>C++</span> <span class="pull-right">65%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Html,Css,Js</span> <span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Statistical Analysis</span> <span class="pull-right">60%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Visual Basic</span> <span class="pull-right">80%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-								
-								<h1 class="big">About</h1>
-								<h2 class="mb-4">About Me</h2>
-								
-								<p>I am a passionate first-generation computer science student from India, dedicated to leveraging technology for social good.
-									As a proud advocate for women in STEM, I actively participate in initiatives to encourage more young women to pursue careers in technology.
-                                    My journey in computer science is fueled by curiosity and resilience, navigating challenges with a determination to succeed. 
-									</p>
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Profile:</span> <span>Computer Science &amp; Applications</span></li>
-									<li class="d-flex"><span>Education:</span> <span>Bachelor of Computer Application</span></li>
-									<li class="d-flex"><span>Language:</span> <span>English, Hindi, German(A2)</span></li>
-									<li class="d-flex"><span>Interest:</span> <span>Learning new languages, Photography, Reading</span></li>
-									
-								</ul>
-							</div>
-						</div>
+                  <div class="skill-mf">
+                    <p class="title-s"><h3>Skills</h3></p>
+                    <span>C</span> <span class="pull-right">75%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
 
+                    <span>C++</span> <span class="pull-right">65%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
 
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="10">0</span> <span>+</span>
-									<span>&nbsp; Projects completed</span>
-								</p>
-								<p><a href="https://www.linkedin.com/in/ankita-singh-938a4625b/" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                    <span>Html,Css,Js</span> <span class="pull-right">90%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
+                    <span>Statistical Analysis</span> <span class="pull-right">60%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
+                    <span>Visual Basic</span> <span class="pull-right">80%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div> <!-- /.overlay -->
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+              <div class="row justify-content-start pb-3">
+                <div class="col-md-12 heading-section ftco-animate">
+                  <h1 class="big">About</h1>
+                  <h2 class="mb-4">About Me</h2>
+                  <p>
+                    I am a passionate first-generation computer science student from India, dedicated to leveraging technology for social good.
+                    As a proud advocate for women in STEM, I actively participate in initiatives to encourage more young women to pursue careers in technology.
+                    My journey in computer science is fueled by curiosity and resilience, navigating challenges with a determination to succeed.
+                  </p>
+                  <ul class="about-info mt-4 px-md-0 px-2">
+                    <li class="d-flex"><span>Profile:</span> <span>Computer Science &amp; Applications</span></li>
+                    <li class="d-flex"><span>Education:</span> <span>Bachelor of Computer Application</span></li>
+                    <li class="d-flex"><span>Language:</span> <span>English, Hindi, German(A2)</span></li>
+                    <li class="d-flex"><span>Interest:</span> <span>Learning new languages, Photography, Reading</span></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="counter-wrap ftco-animate d-flex mt-md-3">
+                <div class="text">
+                  <p class="mb-4">
+                    <span class="number" data-number="10">0</span> <span>+</span>
+                    <span>&nbsp; Projects completed</span>
+                  </p>
+                  <p><a href="https://www.linkedin.com/in/ankita-singh-938a4625b/" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
+                </div>
+              </div>
+            </div>
+          </div> <!-- /.row d-flex -->
+        </div>
+      </div>
     </section>
 
-
-
-	
+    <!-- RESUME -->
     <section class="ftco-section ftco-no-pb" id="resume-section">
-    	<div class="container">
-    		<div class="row justify-content-center pb-5">
+      <div class="container">
+        <div class="row justify-content-center pb-5">
           <div class="col-md-10 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Mission Statement</h1>
+            <h1 class="big big-2">Mission Statement</h1>
             <h2 class="mb-4"></h2>
             <p>As a first-generation woman from rural India with a strong foundation in computer science, I am passionate about leveraging technology to drive social impact and innovation.</p>
           </div>
         </div>
 
-		<div class="row">
-			<h1 class="big-4">Education</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-        <br>
-		<br>
-		<br>
-		
-			<div class="row">
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2022-Present</span>
-    					<h2>Bachelor of Computer Applications</h2>
-    					<span class="position">Banasthali Vidyapith University</span>
-    					<p class="mt-4">Grade: First class distinction.</p>
-    				</div>
-    			</div>
+        <div class="row">
+          <h1 class="big-4">Education</h1>
+          <div class="underline"></div>
+        </div>
+        <br /><br /><br /><br />
 
-					<div class="col-md-6">
-						<div class="resume-wrap ftco-animate">
-							<span class="date">2021-2022</span>
-							<h2>Diploma in Internet and Web Applications</h2>
-							<span class="position">Banasthali Vidyapith University</span>
-							<p class="mt-4">Grade: First class.</p>
-						</div>
-					</div>
-                </div>
-    			<div class="row">
-					<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date"></span>
-    					<h2>Higher Secondary School</h2>
-    					<span class="position">Pushp Niketan School</span>
-    					<p class="mt-4">Grade: First class.</p>
-    				</div>
-				</div>
-    		
+        <div class="row">
+          <div class="col-md-6">
+            <div class="resume-wrap ftco-animate">
+              <span class="date">2022-Present</span>
+              <h2>Bachelor of Computer Applications</h2>
+              <span class="position">Banasthali Vidyapith University</span>
+              <p class="mt-4">Grade: First class distinction.</p>
+            </div>
+          </div>
 
-	        <div class="col-md-6">
-				<div class="resume-wrap ftco-animate">
-					<span class="date"></span>
-					<h2>High School</h2>
-					<span class="position">St.Mary's Convent Sr. Sec. School</span>
-					<p class="mt-4">Grade: First class.</p>
-				</div>
-			</div>
-		</div>
+          <div class="col-md-6">
+            <div class="resume-wrap ftco-animate">
+              <span class="date">2021-2022</span>
+              <h2>Diploma in Internet and Web Applications</h2>
+              <span class="position">Banasthali Vidyapith University</span>
+              <p class="mt-4">Grade: First class.</p>
+            </div>
+          </div>
+        </div>
 
-    		<div class="row justify-content-center mt-5">
-    			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
-    			</div>
-    		</div>
-    	</div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="resume-wrap ftco-animate">
+              <span class="date"></span>
+              <h2>Higher Secondary School</h2>
+              <span class="position">Pushp Niketan School</span>
+              <p class="mt-4">Grade: First class.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="resume-wrap ftco-animate">
+              <span class="date"></span>
+              <h2>High School</h2>
+              <span class="position">St.Mary's Convent Sr. Sec. School</span>
+              <p class="mt-4">Grade: First class.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+          <div class="col-md-6 text-center ftco-animate">
+            <p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
+          </div>
+        </div>
+      </div>
     </section>
 
-   
-
+    <!-- PROJECTS (commented-out sample retained) -->
     <section class="ftco-section" id="project-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
@@ -363,74 +503,14 @@ a:hover, a:focus{ color: #2b4a68; text-decoration: none; }
             <p>Below are the sample projects by me.</p>
           </div>
         </div>
-		<!--
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/rishabhnmishra/SQL_Music_Store_Analysis/blob/main/Music_Store_Query.sql" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/rishabhnmishra/SQL_Music_Store_Analysis/blob/main/Music_Store_Query.sql">Digital Music Store Data Analysis using SQL</a></h3>
-                <p>Analyzed music store data using advanced SQL queires to identify gaps and increase the business growth.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/rishabhnmishra/Python_Diwali_Sales_Analysis/blob/main/Diwali_Sales_Analysis.ipynb" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/rishabhnmishra/Python_Diwali_Sales_Analysis/blob/main/Diwali_Sales_Analysis.ipynb">Data Analysis using Python Project for Beginners</a></h3>
-                <p>Performed exploratory data analysis on diwali sales data using Python to improve the customer experience.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry">
-              <a href="https://github.com/rishabhnmishra/Madhav_Store_Analysis_PowerBI/blob/main/Madhav%20Store%20dashboard.jpg" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/rishabhnmishra/Madhav_Store_Analysis_PowerBI/blob/main/Madhav%20Store%20dashboard.jpg">Power BI Sales dashboard Project for Beginners</a></h3>
-                <p>Designed a power bi dashboard for Madhav Store to track and analyze the online sales data acorss India.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-	<br>  -->
-		<!-- added justify-content-center to center align the last two projects 
-		<div class="row d-flex justify-content-center">  
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/rishabhnmishra/sales_forecasting/tree/main" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/rishabhnmishra/sales_forecasting/tree/main">Sales Forecast- Time Series Forecasting</a></h3>
-				  <p>Used multiple machine learning models to forecast sales (retail store) and performed time series analysis.</p>
-				</div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/rishabhnmishra/customer_segmentation/blob/main/Customer_Segmentation-final.ipynb" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/rishabhnmishra/customer_segmentation/blob/main/Customer_Segmentation-final.ipynb">Customer Segmentation using clustering model</a></h3>
-				  <p>Developed a ML model to give various recommendations of financial products &amp; services on target customer groups.</p>
-				</div>
-			  </div>
-			</div>
-		 </div>
-	  </div>
+        <!-- Your project cards can go here -->
+      </div>
     </section>
--->     
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+
+    <!-- COUNTERS + GITHUB CTA -->
+    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
       <div class="container">
-		<div class="row d-md-flex align-items-center">
+        <div class="row d-md-flex align-items-center">
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
@@ -465,27 +545,25 @@ a:hover, a:focus{ color: #2b4a68; text-decoration: none; }
           </div>
         </div>
       </div>
-	
-	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<!-- <div class="container"> -->
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>More projects on<span> Github  </span> </h2>
-						<div class="heading"> <h4> I love to solve problems. </h4>
-						<br>
-						<p><a href="https://github.com/AnkitaS99" class="btn btn-primary py-3 px-5">GitHub</a></p>
-						</div>
-					</div>
-				</div>
-			<!-- </div> -->
-		</div>
-	</section>
 
+      <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
+        <div class="row justify-content-center">
+          <div class="col-md-7 ftco-animate text-center">
+            <h2>More projects on<span> Github </span></h2>
+            <div class="heading">
+              <h4>I love to solve problems.</h4>
+              <br />
+              <p><a href="https://github.com/AnkitaS99" class="btn btn-primary py-3 px-5">GitHub</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-
+    <!-- CONTACT -->
     <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
       <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
+        <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
             <h1 class="big big-2">Contact</h1>
             <h2 class="mb-4">Contact Me</h2>
@@ -495,89 +573,93 @@ a:hover, a:focus{ color: #2b4a68; text-decoration: none; }
 
         <div class="row d-flex contact-info mb-5">
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <p>Rajasthan, India</p>
-	          </div>
+            <div class="align-self-stretch box p-4 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="icon-map-signs"></span>
+              </div>
+              <h3 class="mb-4">Address</h3>
+              <p>Rajasthan, India</p>
+            </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://0101010101"> NA </a></p>
-	          </div>
+            <div class="align-self-stretch box p-4 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="icon-phone2"></span>
+              </div>
+              <h3 class="mb-4">Contact Number</h3>
+              <p><a href="tel://0101010101"> NA </a></p>
+            </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:info@yoursite.com">as10090174@gmail.com</a></p>
-	          </div>
+            <div class="align-self-stretch box p-4 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="icon-paper-plane"></span>
+              </div>
+              <h3 class="mb-4">Email Address</h3>
+              <p><a href="mailto:as10090174@gmail.com">as10090174@gmail.com</a></p>
+            </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
-          		</div>
-          		<h3 class="mb-4">Download Resume</h3>
-	            <p><a href="https://docs.google.com/presentation/d/1Z-6vEW2s13PPiLlHO-zjMkzkg64tkzBdvPDhgrc81Xs/edit?usp=sharing">Go to Resume</a></p>
-	          </div>
+            <div class="align-self-stretch box p-4 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="icon-globe"></span>
+              </div>
+              <h3 class="mb-4">Download Resume</h3>
+              <p><a href="https://docs.google.com/presentation/d/1Z-6vEW2s13PPiLlHO-zjMkzkg64tkzBdvPDhgrc81Xs/edit?usp=sharing">Go to Resume</a></p>
+            </div>
           </div>
 
-		  <div class="container">
-				<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					  <li class="ftco-animate normal-txt">Find me on  </li>
-					  <li class="ftco-animate"><a href="https://github.com/AnkitaS99"><span class="icon-github"></span></a></li>
-					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/ankita-singh-938a4625b/"><span class="icon-linkedin"></span></a></li> 
-					</ul>
-				<br>
-		   </div>
-   </div>
- </section>
+          <div class="container">
+            <br />
+            <ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+              <li class="ftco-animate normal-txt">Find me on</li>
+              <li class="ftco-animate"><a href="https://github.com/AnkitaS99"><span class="icon-github"></span></a></li>
+              <li class="ftco-animate"><a href="https://www.linkedin.com/in/ankita-singh-938a4625b/"><span class="icon-linkedin"></span></a></li>
+            </ul>
+            <br />
+          </div>
+        </div>
+      </div>
+    </section>
 
-
- 
-	
+    <!-- FOOTER -->
     <footer class="ftco-footer ftco-section">
-		<div class="container">
-		  <div class="row">
-			<div class="col-md-12 text-center">
-  
-			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-			</div>
-		  </div>
-		</div>
-	  </footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+              All rights reserved | This template is made with by
+              <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"></circle>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"></circle>
+      </svg>
+    </div>
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  
-  <script src="js/main.js"></script>
-    
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
