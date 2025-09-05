@@ -23,101 +23,85 @@
     <link rel="stylesheet" href="css/style.css">
 
 
-
 <style>
+/* ===========================
+   Pastel, readable theme
+   (drop-in replacement)
+   =========================== */
 
-/*======================================
-//--//-->   ABOUT
-======================================*/
-<style>
-:root {
-  --primary: #fbeff2; /* Baby Pink */
-  --secondary: #f7f5f2; /* Eggshell White */
-  --accent: #ffd6e0; /* Soft Pink Accent */
-  --text: #4a4a4a; /* Darker grey for text contrast */
-  --highlight: #ffe5ec; /* Light highlight pink */
+:root{
+  /* Palette (soft but contrast-safe) */
+  --bg:        #F8FAFD;  /* off-white with hint of blue */
+  --surface:   #FFFFFF;  /* cards/sections */
+  --muted:     #F2F4F8;  /* light section strips */
+  --primary:   #BDE0FE;  /* powder blue */
+  --secondary: #FFC8DD;  /* blush pink */
+  --tertiary:  #CDEAC0;  /* mint */
+  --highlight: #FAF3DD;  /* butter */
+  --ink:       #2B2E3A;  /* main text (dark slate) */
+  --ink-soft:  #5A6270;  /* muted text */
+  --link:      #355C7D;  /* desaturated indigo (readable) */
+  --border:    #E3E8EF;  /* soft border */
+  --shade:     rgba(24, 28, 38, 0.06); /* subtle shadow */
 }
 
-body {
-  background-color: var(--primary);
-  color: var(--text);
+/* Base */
+* { box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--text);
+h1,h2,h3,h4,h5,h6{
+  color: var(--ink);
 }
+p,li,span,small{ color: var(--ink); }
 
-.button, .btn {
-  background-color: var(--accent);
-  color: var(--text);
-  border: 2px solid var(--highlight);
-}
+/* Links */
+a{ color: var(--link); }
+a:hover, a:focus{ color: #2b4a68; text-decoration: none; }
 
-.button:hover, .btn:hover {
-  background-color: var(--highlight);
-  color: var(--text);
-  border-color: var(--accent);
-}
-
-.about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  background-color: var(--secondary);
+/* Buttons (Bootstrap friendly) */
+.btn,
+.button{
+  background: var(--primary);
+  color: var(--ink);
+  border: 1px solid #9CCCFB;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform .06s ease, background .2s ease, border-color .2s ease;
+}
+.btn:hover,
+.button:hover{
+  background: #A8D5FE;
+  border-color: #87C3FB;
+  transform: translateY(-1px);
+}
+.btn-primary{
+  background: var(--secondary);
+  border-color: #FFB0CC;
+  color: var(--ink);
+}
+.btn-primary:hover{
+  background: #FFBCD6;
+  border-color: #FFA5C8;
 }
 
-.skill-mf .progress {
-  margin: 0.5rem 0 1.2rem 0;
-  border-radius: 10px;
-  height: 0.7rem;
-  background-color: var(--highlight);
+/* Navbar: soft, readable, glassy */
+#ftco-navbar{
+  background: rgba(255,255,255,0.7) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
 }
-
-.skill-mf .progress .progress-bar {
-  height: 0.7rem;
-  background-color: #f7aef8; /* Soft lavender pink */
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav .nav-link{
+  color: var(--ink) !important;
 }
-
-#typing-animation {
-  font-size: 30px;
-  font-weight: bold;
-  color: #cc5c84; /* Baby pink text */
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing 3s steps(20, end) infinite;
+.navbar-dark .navbar-nav .nav-link:hover{
+  color: var(--link) !important;
 }
-
-#typing-animation:before {
-  content: "";
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes typing-cursor {
-  from { width: 5px; }
-  to { width: 0; }
-}
-
-.zoom-effect {
-  overflow: hidden;
-  transition: transform 0.3s ease-out;
-}
-
-.zoom-effect:hover {
-  transform: scale(1.1);
-}
-</style>
-
+.navbar-dark .navbar-toggler{
+  border-co
 
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
