@@ -216,72 +216,93 @@
   flex:1;
   display:flex;
   flex-dir
-/* === Contact === */
+/* === Contact (reworked) === */
+.contact {
+  background: var(--muted);
+}
+.contact .lead {
+  color: var(--ink-soft);
+  margin: 6px 0 20px;
+}
 .contact-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  gap:18px;
 }
 .contact-card{
   background:var(--surface);
   border:1px solid var(--border);
   border-radius:var(--radius);
   padding:20px;
-  text-align:center;
-  box-shadow:0 6px 20px var(--shade);
+  box-shadow:0 8px 24px var(--shade);
+  display:flex; align-items:flex-start; gap:14px;
+  transition: transform .08s ease, box-shadow .2s ease;
+}
+.contact-card:hover{
+  transform: translateY(-2px);
+  box-shadow:0 14px 28px var(--shade);
+}
+.cc-ico{
+  flex:0 0 44px; height:44px; width:44px;
+  border-radius:12px;
+  background: var(--primary);
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  font-size:22px; line-height:1;
+  border:1px solid #64B5F6;
 }
 .contact-card h3{
-  margin:10px 0;
-  font-size:18px;
-  color:var(--ink);
+  margin:0 0 4px; font-size:17px; color:var(--ink);
 }
-.contact-card p,
-.contact-card a{
-  color:var(--ink-soft);
-  font-size:15px;
+.contact-card p, .contact-card a{
+  margin:0; color:var(--ink-soft);
 }
 .contact-card a:hover{ color:var(--link); }
 
-.socials{
-  margin-top:24px;
-  display:flex;
-  justify-content:center;
-  gap:16px;
+.contact .socials{
+  margin-top:18px; display:flex; gap:12px; justify-content:center;
 }
-.socials a{
-  display:inline-block;
-  width:44px; height:44px;
-  border-radius:50%;
-  background:var(--muted);
-  display:flex; align-items:center; justify-content:center;
-  font-size:20px;
-  color:var(--link);
-  text-decoration:none;
+.social-chip{
+  display:inline-flex; align-items:center; gap:8px;
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:8px 12px;
+  color: var(--link);
+  box-shadow:0 4px 12px var(--shade);
+  transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+  font-weight:600; font-size:14px;
 }
-.socials a:hover{ background:var(--pri
-/* === Footer === */
+.social-chip:hover{
+  transform: translateY(-1px);
+  box-shadow:0 10px 18px var(--shade);
+  background: var(--primary);
+  color:#fff;
+}
+
+/* === Footer (reworked) === */
 footer{
-  background:var(--muted);
-  padding:40px 20px;
-  text-align:center;
+  background: var(--surface);
   border-top:1px solid var(--border);
+  padding:36px 20px;
+  text-align:center;
 }
-footer p{
-  margin:8px 0;
-  color:var(--ink-soft);
-  font-size:15px;
+footer .fun{
+  margin:10px auto 0;
+  max-width: 720px;
+  color: var(--ink);
+  font-style: italic;
 }
-footer .fun-fact{
-  font-style:italic;
-  color:var(--ink);
+footer p{ color: var(--ink-soft); margin:6px 0; }
+footer .top{
   margin-top:12px;
 }
-footer a{
-  color:var(--link);
-  text-decoration:none;
-  font-weight:600;
+footer .top a{
+  display:inline-block; padding:8px 12px; border-radius:999px;
+  background: var(--muted); border:1px solid var(--border);
+  color: var(--link); font-weight:600; text-decoration:none;
 }
-footer a:hover{ color:#08306B; }
+footer .top a:hover{ background: var(--primary); color:#fff; }
+
   </style>
 </head>
 <body>
@@ -464,46 +485,58 @@ footer a:hover{ color:#08306B; }
   </div>
 </section>
 <!-- CONTACT -->
-<section id="contact" class="section">
+<section id="contact" class="section contact">
   <div class="container">
     <h2>Contact Me</h2>
-    <p>Below are the details to reach out to me!</p>
+    <p class="lead">I'd love to hear from you — here are the best ways to reach me.</p>
 
     <div class="contact-grid">
       <div class="contact-card">
-        <h3>Address</h3>
-        <p>Rajasthan, India</p>
+        <div class="cc-ico">📍</div>
+        <div>
+          <h3>Address</h3>
+          <p>Rajasthan, India</p>
+        </div>
       </div>
+
       <div class="contact-card">
-        <h3>Email</h3>
-        <p><a href="mailto:as10090174@gmail.com">as10090174@gmail.com</a></p>
+        <div class="cc-ico" style="background:var(--secondary);border-color:#F06292;">✉️</div>
+        <div>
+          <h3>Email</h3>
+          <p><a href="mailto:as10090174@gmail.com">as10090174@gmail.com</a></p>
+        </div>
       </div>
+
       <div class="contact-card">
-        <h3>LinkedIn</h3>
-        <p><a href="https://www.linkedin.com/in/ankita-singh-938a4625b/">View Profile</a></p>
+        <div class="cc-ico" style="background:var(--tertiary);border-color:#81C784;">💼</div>
+        <div>
+          <h3>LinkedIn</h3>
+          <p><a href="https://www.linkedin.com/in/ankita-singh-938a4625b/">View Profile</a></p>
+        </div>
       </div>
+
       <div class="contact-card">
-        <h3>GitHub</h3>
-        <p><a href="https://github.com/AnkitaS99">github.com/AnkitaS99</a></p>
+        <div class="cc-ico">🐙</div>
+        <div>
+          <h3>GitHub</h3>
+          <p><a href="https://github.com/AnkitaS99">github.com/AnkitaS99</a></p>
+        </div>
       </div>
     </div>
 
     <div class="socials">
-      <a href="https://github.com/AnkitaS99" aria-label="GitHub">🐙</a>
-      <a href="https://www.linkedin.com/in/ankita-singh-938a4625b/" aria-label="LinkedIn">💼</a>
-      <a href="mailto:as10090174@gmail.com" aria-label="Email">✉️</a>
+      <a class="social-chip" href="https://github.com/AnkitaS99" aria-label="GitHub">🐙 GitHub</a>
+      <a class="social-chip" href="https://www.linkedin.com/in/ankita-singh-938a4625b/" aria-label="LinkedIn">💼 LinkedIn</a>
+      <a class="social-chip" href="mailto:as10090174@gmail.com" aria-label="Email">✉️ Email</a>
     </div>
   </div>
 </section>
 <!-- FOOTER -->
 <footer>
-  <p>&copy; <script>document.write(new Date().getFullYear());</script> Ankita Singh. All rights reserved.</p>
-  <p>If you made it this far... here’s a fun fact about me 🎉</p>
-  <p class="fun-fact">
-    I once built my first “big project” entirely in one night powered by <b>coffee</b> ☕ and <b>sheer curiosity</b> 🚀
-  </p>
-  <p><a href="#home">⬆ Back to top</a></p>
+  <p>&copy; <script>document.write(new Date().getFullYear());</script> Ankita Singh — All rights reserved.</p>
+  <p>If you made it this far… here’s a fun fact about me 🎉</p>
+  <p class="fun">I once built my first “big project” in a single night powered by coffee ☕ and sheer curiosity 🚀</p>
+  <p class="top"><a href="#home">⬆ Back to top</a></p>
 </footer>
 </body>
 </html>
-
